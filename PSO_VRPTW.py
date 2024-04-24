@@ -15,11 +15,11 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 
-# file_path = 'input.txt' 
-# df = pd.read_csv(file_path, delimiter='\s+')  
-# print(df.info())
-# df['CUST_NO.'] = df.index
-# df.to_csv('solomon_data.txt', index=False)
+file_path = 'input.txt' 
+df = pd.read_csv(file_path, delimiter='\s+')  
+print(df.info())
+df['CUST_NO.'] = df.index
+df.to_csv('solomon_data.txt', index=False)
 
 # Initialize the customers dictionary
 vehicle_capacity = 200
