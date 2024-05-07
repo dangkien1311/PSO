@@ -25,10 +25,10 @@ df.to_csv('solomon_data.txt', index=False)
 vehicle_capacity = 200
 time_window_deviation = 50
 customers = {}
-num_customers = 50
+num_customers = 20
 end_point_data = num_customers + 2
 num_particles = 100
-max_iterations = 150
+max_iterations = 200
 w = 0.5
 c1 = 1.5
 c2 = 1.5
@@ -160,14 +160,14 @@ def pso(num_particles, num_customers, max_iterations):
         print(f"best position in loop {interval} : {split_route(convert_cus(gbest_position))}")
         print(f"best cost in loop {interval} : {gbest_fitness}")
         print("+++++++++++++++++++++++++")
-        time.sleep(1)
-    return { "best route" : split_route(convert_cus(gbest_position)),
+    return { "best_route" : split_route(convert_cus(gbest_position)),
             "best_cost" : gbest_fitness}
 
 # Example usage
 solution = pso(num_particles, num_customers, max_iterations)
-print(f"best route: {solution['best route']}")
+print(f"best_route: {solution['best_route']}")
 print(f"best_cost: {solution['best_cost']}")
+print(f"number of vehicles: {len(solution['best_route'])}")
 ratio = round((1 - ((best_val[-1])/best_val[0])) * 100,2)
 print(f"result in interval {max_iterations} is {ratio}% better than the original solution")
 plt.plot(best_val)
